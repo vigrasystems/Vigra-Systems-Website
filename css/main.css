@@ -1,0 +1,604 @@
+/* SVG Gradient Stop Classes for Projects Page */
+.stop-primary {
+  stop-color: #3B82F6;
+}
+.stop-accent {
+  stop-color: #06B6D4;
+}
+
+/* Hide empty state by default, shown by JS */
+.hidden-empty-state {
+  display: none;
+}
+
+/* Project detail specific helpers */
+.skeleton-image-lg {
+  height: 400px;
+}
+
+.project-centered {
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.hidden-related {
+  display: none;
+}
+
+.centered-section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Helper to hide featured section until JS shows it */
+.hidden-featured {
+  display: none;
+}
+
+/* Narrow content wrapper used by blog-post and project pages */
+.content-narrow {
+  max-width: 800px;
+}
+
+/* Skeleton variations for blog-post */
+.skeleton-text-title {
+  width: 200px;
+  margin-bottom: 1rem;
+}
+.skeleton-text-large {
+  height: 40px;
+  margin-bottom: 2rem;
+}
+.skeleton-image-lg {
+  height: 400px;
+  margin-bottom: 2rem;
+}
+
+/* Utility to hide elements (used instead of inline styles) */
+.is-hidden {
+  display: none;
+}
+/* SVG Gradient Stop Classes for Team Page */
+.stop-primary {
+  stop-color: #3B82F6;
+}
+.stop-accent {
+  stop-color: #06B6D4;
+}
+
+/* Team Page Skeleton Image Round Style */
+.skeleton-image-round {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+/* ============================================
+   VIGRA-SYSTEMS - MAIN STYLESHEET
+   Design System: TechCore Theme
+============================================ */
+
+/* CSS Variables (Design Tokens) */
+:root {
+  /* Colors - Primary (Gold/Navy Theme) */
+  --primary-900: #050C16;
+  --primary-800: #0A1628;
+  --primary-700: #142842;
+  --primary-600: #B08D45;
+  --primary-500: #D4AF37; /* Metallic Gold */
+  --primary-400: #E5C365;
+  --primary-300: #F3D995;
+  
+  /* Colors - Accent (Silver/Platinum) */
+  --accent-500: #A0A0A0; /* Silver */
+  --accent-400: #C0C0C0;
+  --accent-300: #E5E5E5;
+  
+  /* Colors - Secondary (Deep Royal Blue) */
+  --secondary-500: #1E3A8A;
+  --secondary-400: #2563EB;
+  --secondary-300: #60A5FA;
+  
+  /* Colors - Neutrals */
+  --gray-50: #F8FAFC;
+  --gray-100: #F1F5F9;
+  --gray-200: #E2E8F0;
+  --gray-300: #CBD5E1;
+  --gray-400: #94A3B8;
+  --gray-500: #64748B;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1E293B;
+  --gray-900: #0F172A;
+  
+  /* Status Colors */
+  --success: #10B981;
+  --warning: #F59E0B;
+  --error: #EF4444;
+  --info: #3B82F6;
+  
+  /* Backgrounds */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8FAFC;
+  --bg-dark: #050C16;
+  --bg-card: #FFFFFF;
+  
+  /* Typography */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  
+  /* Font Sizes */
+  --text-xs: 0.75rem;      /* 12px */
+  --text-sm: 0.875rem;     /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg: 1.125rem;     /* 18px */
+  --text-xl: 1.25rem;      /* 20px */
+  --text-2xl: 1.5rem;      /* 24px */
+  --text-3xl: 1.875rem;    /* 30px */
+  --text-4xl: 2.25rem;     /* 36px */
+  --text-5xl: 3rem;        /* 48px */
+  --text-6xl: 3.75rem;     /* 60px */
+  
+  /* Line Heights */
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.75;
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;    /* 8px */
+  --spacing-sm: 1rem;      /* 16px */
+  --spacing-md: 1.5rem;    /* 24px */
+  --spacing-lg: 2rem;      /* 32px */
+  --spacing-xl: 3rem;      /* 48px */
+  --spacing-2xl: 4rem;     /* 64px */
+  --spacing-3xl: 6rem;     /* 96px */
+  
+  /* Border Radius */
+  --radius-sm: 0.375rem;   /* 6px */
+  --radius-md: 0.5rem;     /* 8px */
+  --radius-lg: 1rem;       /* 16px */
+  --radius-xl: 1.5rem;     /* 24px */
+  --radius-full: 9999px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  
+  /* Layout */
+  --container-max: 1280px;
+  --content-max: 960px;
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 500ms ease;
+  
+  /* Z-index layers */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+}
+
+/* ============================================
+   RESET & BASE STYLES
+============================================ */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--gray-900);
+  background-color: var(--bg-primary);
+  overflow-x: hidden;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--primary-500);
+  color: white;
+}
+
+::-moz-selection {
+  background-color: var(--primary-500);
+  color: white;
+}
+
+/* ============================================
+   TYPOGRAPHY
+============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  color: var(--gray-900);
+  margin-bottom: var(--spacing-md);
+}
+
+h1 { font-size: var(--text-5xl); }
+h2 { font-size: var(--text-4xl); }
+h3 { font-size: var(--text-3xl); }
+h4 { font-size: var(--text-2xl); }
+h5 { font-size: var(--text-xl); }
+h6 { font-size: var(--text-lg); }
+
+p {
+  margin-bottom: var(--spacing-sm);
+  color: var(--gray-700);
+}
+
+a {
+  color: var(--primary-500);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+a:hover {
+  color: var(--primary-600);
+}
+
+/* ============================================
+   CONTAINER & LAYOUT
+============================================ */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+section {
+  padding: var(--spacing-3xl) 0;
+}
+
+/* ============================================
+   SECTION HEADERS
+============================================ */
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.section-badge {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: linear-gradient(135deg, var(--primary-500), var(--accent-500));
+  color: white;
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-sm);
+}
+
+.section-title {
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  margin-bottom: var(--spacing-md);
+  background: linear-gradient(135deg, var(--gray-900), var(--gray-700));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-subtitle {
+  font-size: var(--text-lg);
+  color: var(--gray-600);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.section-cta {
+  text-align: center;
+  margin-top: var(--spacing-2xl);
+}
+
+/* ============================================
+   GRADIENT TEXT
+============================================ */
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary-500), var(--accent-500));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================
+   ANIMATIONS
+============================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* ============================================
+   UTILITY CLASSES
+============================================ */
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.font-bold { font-weight: 700; }
+.font-semibold { font-weight: 600; }
+.font-medium { font-weight: 500; }
+
+.mt-1 { margin-top: var(--spacing-xs); }
+.mt-2 { margin-top: var(--spacing-sm); }
+.mt-3 { margin-top: var(--spacing-md); }
+.mt-4 { margin-top: var(--spacing-lg); }
+
+.mb-1 { margin-bottom: var(--spacing-xs); }
+.mb-2 { margin-bottom: var(--spacing-sm); }
+.mb-3 { margin-bottom: var(--spacing-md); }
+.mb-4 { margin-bottom: var(--spacing-lg); }
+
+/* ============================================
+   LOADING SKELETON
+============================================ */
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeleton-image,
+.skeleton-text {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+.skeleton-image {
+  width: 100%;
+  height: 200px;
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-sm);
+}
+
+.skeleton-text {
+  height: 20px;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--spacing-xs);
+}
+
+.skeleton-text.short {
+  width: 60%;
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+============================================ */
+
+/* Desktop only (as per requirements) */
+@media (max-width: 768px) {
+  body::before {
+    content: "This website is optimized for desktop viewing.";
+    display: block;
+    padding: var(--spacing-sm);
+    background: var(--warning);
+    color: white;
+    text-align: center;
+    font-size: var(--text-sm);
+    font-weight: 600;
+  }
+}
+
+
+/* ============================================
+   ADMIN ACCESS STYLING
+============================================ */
+
+/* Discreet Admin Link in Footer */
+.admin-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem;
+    opacity: 0.2;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.admin-link:hover {
+    opacity: 1;
+    color: var(--primary-500);
+    transform: scale(1.15);
+}
+
+.admin-link svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* Tooltip on hover */
+.admin-link::before {
+    content: 'Admin Panel';
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    background: #1F2937;
+    color: white;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(5px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.admin-link:hover::before {
+    opacity: 1;
+    transform: translateY(-5px);
+}
+
+/* Logo pulse animation for secret access */
+.logo {
+    transition: transform 0.2s ease;
+}
+
+.logo.secret-activated {
+    animation: secretPulse 0.4s ease;
+}
+
+@keyframes secretPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Subtle admin link styling */
+.footer-social .admin-secret {
+    position: relative;
+}
+
+.footer-social .admin-secret:hover {
+    transform: scale(1.1) rotate(5deg);
+    opacity: 0.8;
+}
+
+/* Optional: Pulsing effect for those who know */
+.footer-social .admin-secret::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 6px;
+    height: 6px;
+    background: #3B82F6;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.footer-social .admin-secret:hover::after {
+    opacity: 1;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.3); opacity: 0.5; }
+}
+
+/* Ensure social icons wrap nicely on mobile */
+.footer-social {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: rgba(59, 130, 246, 0.2);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .footer-social {
+        justify-content: center;
+    }
+}
+/* Utility gradient background classes used by index.html card icons */
+.gradient-blue {
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+}
+.gradient-cyan {
+  background: linear-gradient(135deg, #06B6D4 0%, #0891B2 100%);
+}
+.gradient-purple {
+  background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+}
+
+/* Animation delay utilities to replace inline animation-delay styles */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+/* End of VIGRA-SYSTEMS Main Stylesheet */

@@ -1,0 +1,21 @@
+{
+    "name": "Vigra-Systems",
+    "short_name": "Vigra",
+    "description": "Student-driven innovation in R&D - Research and Development Services",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#FFFFFF",
+    "theme_color": "#3B82F6",
+    "icons": [
+        {
+            "src": "assets/images/vigra-logo.jpg",
+            "sizes": "192x192",
+            "type": "image/jpeg"
+        },
+        {
+            "src": "assets/images/vigra-logo.jpg",
+            "sizes": "512x512",
+            "type": "image/jpeg"
+        }
+    ]
+}

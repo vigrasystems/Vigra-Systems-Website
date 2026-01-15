@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Vigra-Systems | R&D Excellence">
+    <meta name="description"
+        content="Vigra-Systems - Student-driven innovation in R&D. Expert services in electronics, mechanical, and software research and development.">
+    <meta name="keywords"
+        content="R&D, research and development, PCB design, embedded systems, innovation, electronics analysis, mechanical engineering, software development, student innovation">
+    <meta name="author" content="Vigra-Systems">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vigra-systems.com/">
+    <meta property="og:title" content="Vigra-Systems | R&D Excellence">
+    <meta property="og:description"
+        content="Student-driven innovation in R&D. Expert services in electronics, mechanical, and software research and development.">
+    <meta property="og:image" content="https://vigra-systems.com/assets/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://vigra-systems.com/">
+    <meta property="twitter:title" content="Vigra-Systems | R&D Excellence">
+    <meta property="twitter:description"
+        content="Student-driven innovation in R&D. Expert services in electronics, mechanical, and software research and development.">
+    <meta property="twitter:image" content="https://vigra-systems.com/assets/images/og-image.jpg">
+
+    <!-- Additional SEO Tags -->
+    <!-- Use web app manifest for cross-browser theme support; meta[name="theme-color"] removed because it's not supported in some browsers -->
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#3B82F6">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Critical CSS (inline for performance) -->
+    <style>
+        /* Critical above-the-fold styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #FFFFFF;
+            color: #111827;
+            overflow-x: hidden;
+        }
+
+        /* Prevent FOUC */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+
+    <title>Vigra-Systems | R&D Excellence</title>
+</head>
+
+<body>
+
+    <!-- ============================================
+         NAVIGATION BAR (Reusable Component)
+    ============================================= -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <!-- Logo -->
+                <!-- NAVIGATION BAR -->
+                <!-- Logo with SECRET triple-click admin access -->
+                <a href="index.html" class="logo" id="secretLogo">
+                    <img src="assets/images/vigra-logo.jpg" alt="Vigra-Systems" class="site-logo-img">
+                    <span class="logo-text">Vigra System</span>
+                </a>
+
+                <!-- Rest of your navigation -->
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="team.html" class="nav-link">Team</a></li>
+                    <!-- <li><a href="blog.html" class="nav-link">Blog</a></li> -->
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+
+                <a href="quote.html" class="btn btn-primary">Get a Quote</a>
+
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- duplicate navigation markup removed -->
+
+    <!-- ============================================
+         HERO SECTION
+    ============================================= -->
+    <section class="hero">
+        <div class="hero-background">
+            <!-- Animated gradient background -->
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+
+        <div class="container">
+            <div class="hero-content fade-in">
+                <span class="hero-badge">🚀 Student-Driven Innovation</span>
+                <h1 class="hero-title">
+                    Research & Development<br>
+                    <span class="gradient-text">Redefined</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Pioneering research and development.
+                    From mechanical creation to mechanical simulation, we transform complexity into clarity.
+                </p>
+                <div class="hero-cta">
+                    <a href="projects.html" class="btn btn-primary btn-lg">
+                        Explore Our Work
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+                            <path d="M7 4l6 6-6 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <a href="#about" class="btn btn-secondary btn-lg">Learn More</a>
+                </div>
+
+                <!-- Stats -->
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="50">0</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="100">0</span>
+                        <span class="stat-label">% Success Rate</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="24">0</span>
+                        <span class="stat-label">Hour Support</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Image/Illustration -->
+            <div class="hero-visual fade-in">
+                <div class="hero-card">
+                    <img src="assets/images/hero-rnd.png" alt="R&D Innovation Lab">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         ABOUT SECTION
+    ============================================= -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Who We Are</span>
+                <h2 class="section-title">Driven by Curiosity, Powered by Innovation</h2>
+                <p class="section-subtitle">
+                    Vigra-Systems is a student-led startup at the forefront of research and
+                    development.
+                </p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card fade-in-up">
+                    <div class="card-icon gradient-blue">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                            <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
+                        </svg>
+                    </div>
+                    <h3>Mechanical Test Simulation</h3>
+                    <p>Mechanical Test Simulation, stress characterization, and structural validation with precision and
+                        repeatability.
+                    </p>
+                </div>
+
+                <div class="about-card fade-in-up delay-100">
+                    <div class="card-icon gradient-cyan">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <circle cx="12" cy="12" r="3" />
+                            <path
+                                d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24" />
+                        </svg>
+                    </div>
+                    <h3>Real-World Work Simulation</h3>
+                    <p>Real-World Work Simulation, process modeling, and operational validation with precision and
+                        reliability.</p>
+                </div>
+
+                <div class="about-card fade-in-up delay-200">
+                    <div class="card-icon gradient-purple">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6" />
+                            <polyline points="8 6 2 12 8 18" />
+                        </svg>
+                    </div>
+                    <h3>Process Planning</h3>
+                    <p>Process Planning, workflow design, and operational optimization with precision and efficiency.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FEATURED PROJECTS SECTION
+    ============================================= -->
+    <section class="projects-showcase">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Our Work</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">
+                    Explore our latest R&D breakthroughs and innovations.
+                </p>
+            </div>
+
+            <!-- Projects will be loaded from Firebase -->
+            <!-- <div class="projects-grid" id="featuredProjects"> -->
+            <!-- Loading skeleton -->
+            <!-- <div class="project-skeleton">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-content">
+                        <div class="skeleton-text"></div>
+                        <div class="skeleton-text short"></div>
+                    </div>
+                </div>
+                <div class="project-skeleton">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-content">
+                        <div class="skeleton-text"></div>
+                        <div class="skeleton-text short"></div>
+                    </div>
+                </div>
+                <div class="project-skeleton">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-content">
+                        <div class="skeleton-text"></div>
+                        <div class="skeleton-text short"></div>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="section-cta">
+                <a href="projects.html" class="btn btn-outline-primary btn-lg">
+                    View Projects
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+                        <path d="M7 4l6 6-6 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PROCESS SECTION
+    ============================================= -->
+    <section class="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">How We Work</span>
+                <h2 class="section-title">Our Process</h2>
+            </div>
+
+            <div class="process-timeline">
+                <div class="process-step fade-in-up">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Analysis & Documentation</h3>
+                        <p>Comprehensive examination of the target system, documenting all components and connections.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="process-step fade-in-up delay-100">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Research & Development</h3>
+                        <p>Applying advanced techniques to understand functionality, architecture, and design
+                            principles.</p>
+                    </div>
+                </div>
+
+                <div class="process-step fade-in-up delay-200">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Recreation & Validation</h3>
+                        <p>Building accurate schematics, models, or code documentation with thorough testing.</p>
+                    </div>
+                </div>
+
+                <div class="process-step fade-in-up delay-300">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Delivery & Support</h3>
+                        <p>Providing complete documentation and ongoing support for implementation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CTA SECTION
+    ============================================= -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Start Your Project?</h2>
+                <p class="cta-text">
+                    Get a free consultation and quote for your R&D needs.
+                </p>
+                <div class="cta-buttons">
+                    <a href="quote.html" class="btn btn-primary btn-lg">Request a Quote</a>
+                    <a href="contact.html" class="btn btn-secondary-white btn-lg">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER (Reusable Component)
+    ============================================= -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <!-- Column 1: Logo & Social -->
+                <div class="footer-column">
+                    <a href="index.html" class="footer-logo">
+                        <img src="assets/images/vigra-logo.jpg" alt="Vigra-Systems" class="footer-logo-img">
+                        <span>Vigra-Systems</span>
+                    </a>
+                    <p class="footer-description">
+                        Student-driven innovation in R&D.
+                        Transforming complexity into clarity through research and development.
+                    </p>
+
+                    <!-- SOCIAL MEDIA LINKS WITH HIDDEN ADMIN ACCESS -->
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                        </a>
+
+                        <!-- 🔐 HIDDEN ADMIN ACCESS - Disguised as "Slack" or "Discord" -->
+                        <a href="admin/login.html" class="social-link admin-secret" aria-label="Team Portal"
+                            title="Team Portal">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <!-- Slack-style icon (really admin access) -->
+                                <path
+                                    d="M6 8a3 3 0 0 1-3 3H3a3 3 0 0 1 0-6h.01A3 3 0 0 1 6 8zm0 8a3 3 0 0 1-3 3H3a3 3 0 0 1 0-6h.01A3 3 0 0 1 6 16zm8-8a3 3 0 0 1 3-3h.01a3 3 0 0 1 0 6H17a3 3 0 0 1-3-3zm0 8a3 3 0 0 1 3-3h.01a3 3 0 0 1 0 6H17a3 3 0 0 1-3-3zM8 6a3 3 0 0 1 3-3 3 3 0 0 1 0 6 3 3 0 0 1-3-3zm0 12a3 3 0 0 1 3-3 3 3 0 0 1 0 6 3 3 0 0 1-3-3zm8-8a3 3 0 0 1-3 3v-.01a3 3 0 0 1 6 0V11a3 3 0 0 1-3 3zm-8 0a3 3 0 0 1-3 3H5a3 3 0 0 1 0-6h.01A3 3 0 0 1 8 10z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Company Links -->
+                <div class="footer-column">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <!-- <li><a href="blog.html">Blog</a></li> -->
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Services -->
+                <div class="footer-column">
+                    <h4 class="footer-heading">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="projects.html?category=3d-modelling">3D Modelling</a></li>
+                        <li><a href="projects.html?category=design-testing">Design Testing</a></li>
+                        <li><a href="projects.html?category=thermal-analysis">Thermal Analysis</a></li>
+                        <li><a href="projects.html?category=3d-simulation">3D Simulation</a></li>
+                        <li><a href="projects.html?category=engineering-documentation">Engineering Documentation</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact -->
+                <div class="footer-column">
+                    <h4 class="footer-heading">Get in Touch</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <a href="mailto:vigrasystems@gmail.com">vigrasystems@gmail.com</a>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                            </svg>
+                            <a href="tel:+918555917305">+91 8555917305</a>
+                        </li>
+                        <!-- Location/Address is removed -->
+
+                        <!-- <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            <span></span>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vigra-Systems. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCROLL TO TOP -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6" />
+        </svg>
+    </button>
+
+    <!-- ============================================
+         ADMIN ACCESS SCRIPTS
+    ============================================= -->
+    <script>
+        // SECRET ADMIN ACCESS: Triple-click logo
+        (function () {
+            const logo = document.getElementById('secretLogo');
+            if (!logo) return; // Safety check
+
+            let clickCount = 0;
+            let clickTimer = null;
+
+            logo.addEventListener('click', function (e) {
+                clickCount++;
+
+                // Start reset timer on first click
+                if (clickCount === 1) {
+                    clickTimer = setTimeout(() => {
+                        clickCount = 0;
+                    }, 800); // 800ms window for triple-click
+                }
+
+                // Triple-click detected!
+                if (clickCount === 3) {
+                    e.preventDefault(); // Prevent normal navigation
+                    clearTimeout(clickTimer);
+                    clickCount = 0;
+
+                    // Visual feedback
+                    logo.classList.add('secret-activated');
+
+                    // Optional: Show notification
+                    showAdminNotification();
+
+                    // Redirect to admin panel
+                    setTimeout(() => {
+                        window.location.href = 'admin/login.html';
+                    }, 400);
+                }
+            });
+
+            // Prevent text selection on rapid clicks
+            logo.addEventListener('mousedown', function (e) {
+                if (e.detail > 1) {
+                    e.preventDefault();
+                }
+            });
+        })();
+
+        // Optional: Visual notification when secret access triggered
+        function showAdminNotification() {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: linear-gradient(135deg, #3B82F6, #1E40AF);
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 0.5rem;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+                z-index: 9999;
+                font-weight: 600;
+                font-size: 0.875rem;
+                animation: slideInRight 0.3s ease;
+            `;
+            notification.innerHTML = '🔐 Accessing Admin Panel...';
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.remove();
+            }, 500);
+        }
+
+        // Animation for notification
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideInRight {
+                from {
+                    transform: translateX(400px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Developer hint in console (first visit only)
+        if (!sessionStorage.getItem('adminHintShown')) {
+            console.log(
+                '%c🔐 Admin Access Hints:',
+                'color: #3B82F6; font-size: 16px; font-weight: bold; padding: 8px 0;'
+            );
+            console.log(
+                '%c1️⃣  Triple-click the logo for quick access',
+                'color: #06B6D4; font-size: 14px; padding: 4px 0;'
+            );
+            console.log(
+                '%c2️⃣  Footer admin icon (bottom-right)',
+                'color: #06B6D4; font-size: 14px; padding: 4px 0;'
+            );
+            sessionStorage.setItem('adminHintShown', 'true');
+        }
+    </script>
+
+    <!-- ============================================
+         SCRIPTS
+    ============================================= -->
+    <!-- SCRIPTS - Copy this to ALL pages -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+
+    <script src="js/firebase-config.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/homepage.js"></script>
+    <script src="js/contact.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8C2YLJKCBH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-8C2YLJKCBH');
+    </script>
+</body>
+
+</html>

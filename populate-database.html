@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Populate Database - Vigra-Systems</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #D4AF37;
+        }
+
+        button {
+            background: #D4AF37;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 10px 10px 0;
+        }
+
+        button:hover {
+            background: #B08D45;
+        }
+
+        button:disabled {
+            background: #9CA3AF;
+            cursor: not-allowed;
+        }
+
+        .log {
+            background: #1F2937;
+            color: #10B981;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 20px;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .log div {
+            margin-bottom: 5px;
+        }
+
+        .error {
+            color: #EF4444;
+        }
+
+        .success {
+            color: #10B981;
+        }
+
+        .info {
+            color: #1E3A8A;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🔥 Vigra-Systems Database Population</h1>
+        <p><strong>IMPORTANT:</strong> Run this script ONCE after setting up Firebase to populate your database with
+            sample data.</p>
+
+        <div>
+            <button onclick="populateProjects()">1. Add Sample Projects (6)</button>
+            <button onclick="populateTeam()">2. Add Team Members (6)</button>
+            <button onclick="populateSettings()">3. Initialize Settings</button>
+            <button onclick="populateAll()">🚀 RUN ALL</button>
+        </div>
+
+        <div class="log" id="log">
+            <div class="info">Ready to populate database...</div>
+        </div>
+    </div>
+
+    <!-- Firebase -->
+    <!-- Make sure these are loaded IN THIS ORDER -->
+    <!-- 1. Firebase Core (v10.7.1 - Compat version) -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <!-- 2. Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <!-- 3. Authentication -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <!-- 4. Storage -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+    <!-- 5. YOUR config (must come AFTER Firebase SDK) -->
+    <script src="js/firebase-config.js"></script>
+
+    <script>
+        const log = document.getElementById('log');
+
+        function addLog(message, type = 'info') {
+            const div = document.createElement('div');
+            div.className = type;
+            div.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            log.appendChild(div);
+            log.scrollTop = log.scrollHeight;
+        }
+
+        // ============================================
+        // POPULATE PROJECTS
+        // ============================================
+        async function populateProjects() {
+            addLog('Starting to add projects...', 'info');
+
+            const projects = [
+                {
+                    title: 'Industrial PCB R&D',
+                    shortDescription: 'Complete R&D analysis of a complex multi-layer PCB from an industrial automation system.',
+                    fullDescription: 'This project involved the comprehensive R&D analysis of a 6-layer PCB used in industrial automation. We successfully traced all connections, identified components, and created a complete schematic and bill of materials. The client was able to manufacture replacement boards and improve upon the original design.',
+                    category: 'Electronics',
+                    technologies: ['Altium', 'KiCAD', 'Python', 'Oscilloscope'],
+                    client: 'Manufacturing Corp',
+                    duration: '3 months',
+                    status: 'Completed',
+                    featured: true,
+                    order: 1,
+                    thumbnailUrl: 'https://via.placeholder.com/800x600/3B82F6/FFFFFF?text=PCB+Project',
+                    imageGallery: [],
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                    updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
+                    completedDate: firebase.firestore.FieldValue.serverTimestamp()
+                },
+                {
+                    title: 'Automotive ECU Firmware Analysis',
+                    shortDescription: 'Detailed analysis and documentation of automotive engine control unit firmware and communication protocols.',
+                    fullDescription: 'We analyzed the firmware of a modern automotive ECU, documenting the CAN bus protocols, identifying key functions, and creating detailed documentation for the client. This enabled them to develop custom tuning solutions while maintaining vehicle safety systems.',
+                    category: 'Embedded Systems',
+                    technologies: ['IDA Pro', 'Ghidra', 'CAN Bus', 'C', 'Assembly'],
+                    client: 'Confidential',
+                    duration: '4 months',
+                    status: 'Completed',
+                    featured: true,
+                    order: 2,
+                    thumbnailUrl: 'https://via.placeholder.com/800x600/06B6D4/FFFFFF?text=ECU+Analysis',
+                    imageGallery: [],
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                    updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
+                    completedDate: firebase.firestore.FieldValue.serverTimestamp()
+                },
+                {
+                    title: 'Legacy Medical Device Replication',
+                    shortDescription: 'Mechanical and electronic R&D of a discontinued medical monitoring device.',
+                    fullDescription: 'A healthcare provider needed replacement parts for a discontinued medical device. We performed R&D on both the mechanical housing and electronic components, creating CAD models and schematics that enabled manufacturing of compatible replacement units.',
+                    category: 'Mechanical',
+                    technologies: ['SolidWorks', 'Eagle', 'Arduino', '3D Scanning'],
+                    client: 'Healthcare Solutions Inc',
+                    duration: '2 months',
+                    status: 'Completed',
+                    featured: true,
+                    order: 3,
+                    thumbnailUrl: 'https://via.placeholder.com/800x600/8B5CF6/FFFFFF?text=Medical+Device',
+                    imageGallery: [],
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                    updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
+                    completedDate: firebase.firestore.FieldValue.serverTimestamp()
+                },
+                {
+                    title: 'IoT Device Security Analysis',
+                    shortDescription: 'Comprehensive security audit and R&D analysis of consumer IoT device firmware.',
+                    fullDescription: 'We performed a complete security analysis of a popular IoT device, identifying vulnerabilities in the firmware and communication protocols. Our findings helped the manufacturer patch critical security issues before they could be exploited.',
+                    category: 'Software',
+                    technologies: ['Python', 'Wireshark', 'Binwalk', 'UART', 'JTAG'],
+                    client: 'Tech Startup',
+                    duration: '1 month',
+                    status: 'Completed',
+                    featured: false,
+                    order: 4,
+                    thumbnailUrl: 'https://via.placeholder.com/800x600/F59E0B/FFFFFF?text=IoT+Security',
+                    imageGallery: [],
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                    updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
+                    completedDate: firebase.firestore.FieldValue.serverTimestamp()
+                },
+                {
+                    title: 'Drone Flight Controller Analysis',
+                    shortDescription: 'R&D and documentation of commercial drone flight controller system.',
+                    fullDescription: 'We analyzed a commercial drone flight controller, documenting the hardware architecture, sensor integration, and control algorithms. This allowed our client to develop custom modifications for specialized applications.',
+                    category: 'Embedded Systems',
+                    technologies: ['ARM Cortex', 'STM32', 'C++', 'MATLAB'],
+                    client: 'Aerospace Research',
+                    duration: '3 months',
+                    status: 'Completed',
+                    featured: false,
+                    order: 5,
+                    thumbnailUrl: 'https://via.placeholder.com/800x600/10B981/FFFFFF?text=Drone+Controller',
+                    imageGallery: [],
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                    updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
+                    completedDate: firebase.firestore.FieldValue.serverTimestamp()
+                },
+                {
+                    title: 'Industrial Robot Arm Modernization',
+                    shortDescription: 'R&D of legacy industrial robot control system for modernization.',
+                    fullDescription: 'An aging industrial robot needed a modern control system. We analyzed the mechanical design, motor controllers, and kinematics to create a compatible modern replacement controller with improved capabilities.',
+                    category: 'Mechanical',
+                    technologies: ['SolidWorks', 'PLC', 'Servo Control', 'Python'],
+                    client: 'Manufacturing Solutions',
+                    duration: '5 months',
+                    status: 'Ongoing',
+                    featured: false,
+                    order: 6,
+                    thumbnailUrl: 'https://via.placeholder.com/800x600/EF4444/FFFFFF?text=Robot+Arm',
+                    imageGallery: [],
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                    updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
+                    completedDate: firebase.firestore.FieldValue.serverTimestamp()
+                }
+            ];
+
+            try {
+                for (let i = 0; i < projects.length; i++) {
+                    await db.collection('projects').add(projects[i]);
+                    addLog(`✓ Added project: ${projects[i].title}`, 'success');
+                }
+                addLog('✅ All projects added successfully!', 'success');
+            } catch (error) {
+                addLog(`❌ Error: ${error.message}`, 'error');
+            }
+        }
+
+        // ============================================
+        // POPULATE TEAM
+        // ============================================
+        async function populateTeam() {
+            addLog('Starting to add team members...', 'info');
+
+            const team = [
+                {
+                    name: 'Alex Johnson',
+                    designation: 'CEO & Founder',
+                    role: 'ceo',
+                    bio: 'Passionate about R&D with 10+ years of experience in electronics and embedded systems. Leading Vigra-Systems to push the boundaries of innovation.',
+                    expertise: ['PCB Design', 'Embedded Systems', 'Business Strategy'],
+                    email: 'alex@vigra-systems.com',
+                    receiveQuotes: true,
+                    socialLinks: {
+                        linkedin: 'https://linkedin.com/in/alexjohnson',
+                        github: 'https://github.com/alexj',
+                        twitter: null,
+                        website: null
+                    },
+                    status: 'Active',
+                    order: 1,
+                    photoUrl: 'https://via.placeholder.com/400x400/3B82F6/FFFFFF?text=AJ',
+                    joinDate: firebase.firestore.FieldValue.serverTimestamp(),
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                },
+                {
+                    name: 'Sarah Chen',
+                    designation: 'CTO',
+                    role: 'cto',
+                    bio: 'Expert in firmware analysis and software R&D. Former security researcher with a passion for uncovering how things work.',
+                    expertise: ['Firmware Analysis', 'Security Research', 'Python'],
+                    email: 'sarah@vigra-systems.com',
+                    receiveQuotes: true,
+                    socialLinks: {
+                        linkedin: 'https://linkedin.com/in/sarahchen',
+                        github: 'https://github.com/schen',
+                        twitter: 'https://twitter.com/sarahchen',
+                        website: null
+                    },
+                    status: 'Active',
+                    order: 2,
+                    photoUrl: 'https://via.placeholder.com/400x400/06B6D4/FFFFFF?text=SC',
+                    joinDate: firebase.firestore.FieldValue.serverTimestamp(),
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                },
+                {
+                    name: 'Marcus Rodriguez',
+                    designation: 'Lead Hardware Engineer',
+                    role: 'admin',
+                    bio: 'Specializing in PCB R&D and circuit analysis. Marcus has successfully analyzed over 100 complex boards.',
+                    expertise: ['PCB Design', 'Circuit Analysis', 'Altium'],
+                    email: 'marcus@vigra-systems.com',
+                    receiveQuotes: true,
+                    socialLinks: {
+                        linkedin: 'https://linkedin.com/in/marcusr',
+                        github: 'https://github.com/mrodriguez',
+                        twitter: null,
+                        website: null
+                    },
+                    status: 'Active',
+                    order: 3,
+                    photoUrl: 'https://via.placeholder.com/400x400/8B5CF6/FFFFFF?text=MR',
+                    joinDate: firebase.firestore.FieldValue.serverTimestamp(),
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                },
+                {
+                    name: 'Emily Taylor',
+                    designation: 'Mechanical Engineer',
+                    role: 'member',
+                    bio: '3D modeling and CAD expert with a focus on mechanical R&D. Emily brings precision and creativity to every project.',
+                    expertise: ['SolidWorks', 'CAD Modeling', '3D Scanning'],
+                    email: 'emily@vigra-systems.com',
+                    receiveQuotes: false,
+                    socialLinks: {
+                        linkedin: 'https://linkedin.com/in/emilytaylor',
+                        github: null,
+                        twitter: null,
+                        website: 'https://emilytaylor.dev'
+                    },
+                    status: 'Active',
+                    order: 4,
+                    photoUrl: 'https://via.placeholder.com/400x400/F59E0B/FFFFFF?text=ET',
+                    joinDate: firebase.firestore.FieldValue.serverTimestamp(),
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                },
+                {
+                    name: 'David Kim',
+                    designation: 'Embedded Systems Specialist',
+                    role: 'member',
+                    bio: 'Embedded systems guru with expertise in ARM, AVR, and FPGA development. David loves diving deep into microcontroller architectures.',
+                    expertise: ['Embedded C', 'ARM Cortex', 'RTOS', 'Protocol Analysis'],
+                    email: 'david@vigra-systems.com',
+                    receiveQuotes: false,
+                    socialLinks: {
+                        linkedin: 'https://linkedin.com/in/davidkim',
+                        github: 'https://github.com/dkim',
+                        twitter: null,
+                        website: null
+                    },
+                    status: 'Active',
+                    order: 5,
+                    photoUrl: 'https://via.placeholder.com/400x400/10B981/FFFFFF?text=DK',
+                    joinDate: firebase.firestore.FieldValue.serverTimestamp(),
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                },
+                {
+                    name: 'Rachel Moore',
+                    designation: 'Software Engineer',
+                    role: 'member',
+                    bio: 'Full-stack developer and automation specialist. Rachel builds tools that make R&D faster and more efficient.',
+                    expertise: ['Python', 'Web Development', 'Automation', 'Data Analysis'],
+                    email: 'rachel@vigra-systems.com',
+                    receiveQuotes: false,
+                    socialLinks: {
+                        linkedin: 'https://linkedin.com/in/rachelmoore',
+                        github: 'https://github.com/rmoore',
+                        twitter: 'https://twitter.com/rachelcodes',
+                        website: null
+                    },
+                    status: 'Active',
+                    order: 6,
+                    photoUrl: 'https://via.placeholder.com/400x400/EF4444/FFFFFF?text=RM',
+                    joinDate: firebase.firestore.FieldValue.serverTimestamp(),
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                }
+            ];
+
+            try {
+                for (let i = 0; i < team.length; i++) {
+                    await db.collection('team').add(team[i]);
+                    addLog(`✓ Added team member: ${team[i].name}`, 'success');
+                }
+                addLog('✅ All team members added successfully!', 'success');
+            } catch (error) {
+                addLog(`❌ Error: ${error.message}`, 'error');
+            }
+        }
+
+        // ============================================
+        // POPULATE SETTINGS
+        // ============================================
+        async function populateSettings() {
+            addLog('Initializing settings...', 'info');
+
+            const settings = {
+                companyInfo: {
+                    name: 'Vigra-Systems',
+                    tagline: 'R&D Excellence',
+                    email: 'vigrasystems@gmail.com',
+                    phone: '+91 8555917305',
+                    address: 'Innovation Hub, Tech District, City 12345',
+                    socialLinks: {
+                        linkedin: 'https://linkedin.com/company/vigra-systems',
+                        twitter: 'https://twitter.com/vigrasystems',
+                        github: 'https://github.com/vigra-systems'
+                    }
+                },
+                emailNotifications: {
+                    quoteTo: ['alex@vigra-systems.com', 'sarah@vigra-systems.com', 'marcus@vigra-systems.com'],
+                    contactTo: ['vigrasystems@gmail.com']
+                },
+                homepage: {
+                    heroTitle: 'Research & Development Redefined',
+                    heroSubtitle: 'Pioneering research and development.From mechanical creation to mechanical simulation, we transform complexity into clarity.',
+                    featuredProjects: []
+                }
+            };
+
+            try {
+                await db.collection('settings').doc('site-config').set(settings);
+                addLog('✅ Settings initialized successfully!', 'success');
+            } catch (error) {
+                addLog(`❌ Error: ${error.message}`, 'error');
+            }
+        }
+
+        // ============================================
+        // POPULATE ALL
+        // ============================================
+        async function populateAll() {
+            addLog('🚀 Starting full database population...', 'info');
+            await populateProjects();
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            await populateTeam();
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            await populateSettings();
+            addLog('🎉 DATABASE POPULATION COMPLETE!', 'success');
+            addLog('You can now close this page and use your admin panel.', 'info');
+        }
+    </script>
+</body>
+
+</html>
