@@ -6,7 +6,7 @@
 
 **Student-Driven Innovation in Research & Development**
 
-[![Website](https://img.shields.io/badge/Website-vigra--systems.com-blue?style=for-the-badge)](https://vigrasystems.com)
+[![Website](https://img.shields.io/badge/Website-vigrasystems.com-blue?style=for-the-badge)](https://vigrasystems.com)
 [![License](https://img.shields.io/badge/License-Proprietary-red?style=for-the-badge)](#license)
 
 </div>
@@ -201,7 +201,7 @@ Make sure to configure appropriate security rules for your Firestore database an
 
 - **Email**: [vigrasystems@gmail.com](mailto:vigrasystems@gmail.com)
 - **Phone**: [+91 8555917305](tel:+918555917305)
-- **Website**: [vigra-systems.com](https://vigrasystems.com)
+- **Website**: [vigrasystems.com](https://vigrasystems.com)
 
 ---
 
@@ -220,4 +220,5 @@ This is proprietary software. Unauthorized copying, modification, distribution, 
 *Transforming complexity into clarity through research and development.*
 
 </div>
+
 
